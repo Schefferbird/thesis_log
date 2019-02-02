@@ -1,28 +1,30 @@
-from django.shortcuts import render
+#from django.shortcuts import render
 from rest_framework.response import Response
-from rest_framework.generics import get_object_or_404
-from rest_framework.views import APIView
+from rest_framework.generics import get_object_or_404, ListCreateAPIView, RetrieveUpdateDestroyAPIView
+
+
+
 from .models import Log
 from .serializers import LogSerializer
 
 
-class LogView(APIView):
-    def get(self, request):
-        logs = Log.objects.all()
+class LogView(ListCreateAPIView):
+    queryset = Log.objects.all()
+    serializer_class = LogSerializer
 
-        serializer = LogSerializer(logs, many=True)
-        return Response({"logs": serializer.data})
+    def perform_create(self, serializer):
+        author = get_object_or_404('Author', id=self.request.data.get('author_id'))
+        return serializer.save(author=author)
 
-    def post(self, request):
-        log = request.data.get('log')
+    ''' def get(self, request, *args, **kwargs):
+        return self.list(request, *args, *kwargs) '''
 
-        serializer=LogSerializer(data=log)
-        if serializer.is_valid(raise_exception=True):
-            log_saved = serializer.save()
-        return Response({"success": "Log '{}' created successfully".format(log_saved.title)})
+    
+class SingleLogView(RetrieveUpdateDestroyAPIView):
+    queryset = Log.objects.all()
+    serializer_class = LogSerializer
 
-
-    def put(self, request, pk):
+    ''' def put(self, request, pk):
         saved_log = get_object_or_404(Log.objects.all(), pk=pk)
         data = request.data.get('log')
         serializer = LogSerializer(instance=saved_log, data=data, partial=True)
@@ -34,4 +36,4 @@ class LogView(APIView):
         # Get object with thid pk
         log = get_object_or_404(Log.objects.all(), pk=pk)
         log.delete()
-        return Response({"message": "Log with id '{}' has been deleted.".format(pk)}, status=204)
+        return Response({"message": "Log with id '{}' has been deleted.".format(pk)}, status=204) '''
