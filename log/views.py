@@ -1,14 +1,20 @@
 from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.generics import get_object_or_404
+from rest_framework.renderers import TemplateHTMLRenderer
 from rest_framework.views import APIView
 from .models import Log
 from .serializers import LogSerializer
 
 
 class LogView(APIView):
+    
+    renderer_classes = [TemplateHTMLRenderer]
+    template_name = 'log/index.html'
+    
+    
     def get(self, request):
-        logs = Log.objects.all()
+        logs = Log.objects.all()   #.order_by('date')
 
         serializer = LogSerializer(logs, many=True)
         return Response({"logs": serializer.data})

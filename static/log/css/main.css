@@ -1,0 +1,22 @@
+
+
+.d-flex {
+    padding: 2%;
+}
+
+.card {
+    border: solid;
+    color: darkslategray;
+    max-width: 350px;
+    margin: 1%;
+}
+
+.log-title {
+    padding-left: 3%;
+    padding-top: 1%; 
+}
+
+.cardbody {
+    padding: 5%
+}
+

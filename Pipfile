@@ -9,6 +9,9 @@ verify_ssl = true
 django = "*"
 djangorestframework = "*"
 pygments = "*"
+pillow = "*"
+django-bootstrap3 = "*"
+django-grappelli = "*"
 
 [requires]
 python_version = "3.6"
