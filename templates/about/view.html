@@ -1,0 +1,35 @@
+{% extends "log/base.html" %}
+
+{% block content %}
+
+<div class="d-flex flex-wrap">
+
+ 
+    {% for lg in logs %}
+    
+        <div class="card border-dark bg-dark text-white" >
+
+            {% if lg.image %}
+            <img class="card-img-top " src="{{ lg.image }} " alt=''>
+            <div class="card-img-overlay ">
+                    <!-- <h5 class="card-title text-black">{{ lg.title }}</h5>
+                    <p class="card-text text-black"> {{ lg.created | date:"Y-m-d" }} {{ lg.created | time:"H" }} </p> -->
+            </div>
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ lg.title }}</h5>
+                <span class="card-text" ><small class="text-muted"> {{ lg.created| slice:":10" }}  </small></span>
+             
+                <!-- <p> {{ lg.created }}</p>  -->
+                <p class="card-text">{{ lg.body | linebreaks }}</p>
+            </div>
+
+        </div>
+    
+
+    {% endfor %}
+
+
+</div>
+
+{% endblock %}

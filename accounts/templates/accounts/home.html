@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Account</h1>
+<div class="d-flex flex-wrap"></div>
+  <div class="card border-dark bg-dark text-white">
+    <img class="card-img-top " src="media/the-oresunds-bridge-753625_640.jpg" alt=''>
+    <div class="card-img-overlay ">
+      <h5 class="card-title">Account details</h5>
+
+    </div>
+    <div class="card-body">
+      <span class="card-text"><small class="text-muted"> </small></span>
+      <div class='list-group'>
+          <a class='list-group-item' href='#'>View</a>
+          <a class='list-group-item' href='{% url "account:user-update" %}'>Update Details</a>
+          <a class='list-group-item' href='{% url "password_change" %}'>Change Password</a>
+          <hr>
+          <a class='list-group-item' href='#'>Delete</a>
+      </div>
+    </div>
+
+  </div>
+  <div class="card border-dark bg-dark text-white">
+
+    <img class="card-img-top " src="media/the-oresunds-bridge-753625_640.jpg " alt=''>
+    <div class="card-img-overlay ">
+      <h5 class="card-title">Log</h5>
+    </div>
+
+    <div class="card-body">
+
+      <span class="card-text"><small class="text-muted"> </small></span>
+      <div class='list-group'>
+        <a class='list-group-item' href='{% url "action_log" %}'>Actions</a>
+        <a class='list-group-item' href='{% url "download_log" %}'>Downloads</a>
+        <a class='list-group-item' href='{% url "query_log" %}'>Queries</a>
+      </div>
+    </div>
+
+  </div>
+  <div class="card border-dark bg-dark text-white">
+
+    <img class="card-img-top " src="media/the-oresunds-bridge-753625_640.jpg" alt=''>
+    <div class="card-img-overlay ">
+      <h5 class="card-title">Support</h5>
+    </div>
+    <div class="card-body">
+      <span class="card-text"><small class="text-muted"> </small></span>
+      <div class='list-group'>
+        <a class='list-group-item' href='{% url "faq" %}'>FAQ</a>
+        <a class='list-group-item' href='{% url "contact" %}'>Contact</a>
+        <a class='list-group-item' href='{% url "about" %}'>About ASK</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

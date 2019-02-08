@@ -12,6 +12,10 @@ pygments = "*"
 pillow = "*"
 django-bootstrap3 = "*"
 django-grappelli = "*"
+django-add-default-value = "*"
+psycopg2 = "*"
+dj-database-url = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.6"

@@ -5,7 +5,7 @@ class LogSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Log
-        fields = ('id', 'title', 'description', 'body', 'created', 'image', 'height_field', 'width_field', 'author_id')
+        fields = ('id', 'title', 'description', 'body', 'created', 'image', 'author_id')
 
     ''' title = serializers.CharField(max_length=120)
     description = serializers.CharField()

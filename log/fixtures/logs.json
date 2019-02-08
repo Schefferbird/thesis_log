@@ -1,0 +1,82 @@
+[
+{
+    "model": "log.author",
+    "pk": 1,
+    "fields": {
+        "name": "rs222vt",
+        "email": "richard.scheffer@yahoo.se"
+    }
+},
+{
+    "model": "log.log",
+    "pk": 2,
+    "fields": {
+        "title": "bild",
+        "description": "",
+        "body": "bildtest",
+        "created": "2019-02-06T12:29:20.297Z",
+        "image": "logimg/download.jpg",
+        "author": 1
+    }
+},
+{
+    "model": "log.log",
+    "pk": 3,
+    "fields": {
+        "title": "Another picture",
+        "description": "",
+        "body": "Progress",
+        "created": "2019-02-06T13:16:46.895Z",
+        "image": "logimg/the-oresund-bridge-753625_640.jpg",
+        "author": 1
+    }
+},
+{
+    "model": "log.log",
+    "pk": 4,
+    "fields": {
+        "title": "No image",
+        "description": "",
+        "body": "just text",
+        "created": "2019-02-06T13:42:19.612Z",
+        "image": "",
+        "author": 1
+    }
+},
+{
+    "model": "log.log",
+    "pk": 5,
+    "fields": {
+        "title": "Solved basic log functions",
+        "description": "Log for my thesis is up and running.",
+        "body": "First log for the thesis. Screendump from test.",
+        "created": "2019-02-06T13:55:42.819Z",
+        "image": "logimg/screendump_logtests.png",
+        "author": 1
+    }
+},
+{
+    "model": "log.log",
+    "pk": 6,
+    "fields": {
+        "title": "Test author default",
+        "description": "",
+        "body": "And it works",
+        "created": "2019-02-06T15:27:44.035Z",
+        "image": "",
+        "author": 1
+    }
+},
+{
+    "model": "log.log",
+    "pk": 7,
+    "fields": {
+        "title": "Test constraint on image",
+        "description": "",
+        "body": "?",
+        "created": "2019-02-06T15:30:30.049Z",
+        "image": "logimg/screendump_logtests_ywYLras.png",
+        "author": 1
+    }
+}
+]
