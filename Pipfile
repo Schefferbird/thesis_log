@@ -16,6 +16,7 @@ django-add-default-value = "*"
 psycopg2 = "*"
 dj-database-url = "*"
 gunicorn = "*"
+python = "==3.6.7"
 
 [requires]
 python_version = "3.6"
