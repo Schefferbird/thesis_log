@@ -58,6 +58,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+LOGOUT_REDIRECT_URL = '/login/'
 ROOT_URLCONF = 'nlp_log.urls'
 
 TEMPLATES = [
@@ -84,7 +85,7 @@ WSGI_APPLICATION = 'nlp_log.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DEBUG = False
-ALLOWED_HOSTS =  ['nlp-log.herokuapp.com', '.yourdomain.com']
+ALLOWED_HOSTS =  ['nlp-log.herokuapp.com', '.askdox.io']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
